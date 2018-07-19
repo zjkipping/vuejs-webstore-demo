@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>Hello World!</h1>
+  <div class="checkout">
+    <h1>Checkout View</h1>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
-export default class Home extends Vue {
+export default class Checkout extends Vue {
 
 }
 </script>

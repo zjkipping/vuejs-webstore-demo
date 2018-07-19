@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>Hello World!</h1>
+  <div class="cart">
+    <h1>Cart View</h1>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
-export default class Home extends Vue {
+export default class Cart extends Vue {
 
 }
 </script>
