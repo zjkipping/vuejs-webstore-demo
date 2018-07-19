@@ -70,4 +70,8 @@ I then just followed the docs here https://bootstrap-vue.js.org for any componen
 
 I then created a component for the navbar to stick above my router-view using the nav component from bootstrap-vue.
 
+I created some random data in a json file to use.
+For images I used: https://www.placecage.com/
+For text I used: https://lipsum.com/feed/html
+
 
