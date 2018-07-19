@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <NavBar/>
-    <router-view/>
+    <b-container>
+      <router-view/>
+    </b-container>
   </div>
 </template>
 
@@ -13,6 +15,9 @@ import NavBar from '@/components/NavBar.vue';
 @Component({
   components: {
     NavBar,
+  },
+  mounted() {
+    this.$store.dispatch('FetchProducts');
   },
 })
 export default class App extends Vue { }

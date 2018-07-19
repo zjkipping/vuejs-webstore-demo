@@ -11,11 +11,9 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({
   props: {
     id: {
-      type: Number
-    }
-  }
+      type: String,
+    },
+  },
 })
-export default class ProductDetails extends Vue {
-
-}
+export default class ProductDetails extends Vue { }
 </script>

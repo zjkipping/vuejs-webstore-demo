@@ -74,4 +74,33 @@ I created some random data in a json file to use.
 For images I used: https://www.placecage.com/
 For text I used: https://lipsum.com/feed/html
 
+At this point I started to poke around in the docs for VueX here: https://vuex.vuejs.org/guide/
 
+I created my state, fully typed, as follows:
+	- Array of Products
+	- Array of CartItems
+	- LoggedIn (boolean)
+
+I created my mutations:
+	- Add to cart
+	- Subtract from cart
+	- Remove from cart
+	- Set product list
+	- Set logged in
+
+Might have done a shoddy job at the Add and Subtract, but I wanted to get it done fast.
+
+I then wanted to create an action for retrieving my mock data I created in the json file.
+So, I started looking at the recommended plugin, Axios, for handling http requests.
+
+Vue doesn't natively use observable for handling Async functionality so I just made use of async/await throught the demo where needed.
+
+Couldn't for the life of me get static data files to work with Vue's webpack setup; so, I just threw the json file on an ec2 instance and used, https://mnaoumov.wordpress.com/2018/02/05/download-google-drive-file-via-ajax-ignoring-cors/, to get around the CORS problem.
+
+Never do the above in a real application. I'm too lazy to make an actual server for this demo, and I'll change the link in the production build that goes on the ec2 instance to locally retrieve the file.
+
+Once I got data into my app using VueX and Axios, I went about setting up my views. 
+
+I started with the ProductList view first. Using https://vuejs.org/v2/guide/list.html to render the data
+
+I made use of bootstrap-vue's Card component and https://vuejs.org/v2/guide/syntax.html to create cards for each product on the list page.
