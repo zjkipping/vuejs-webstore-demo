@@ -3,7 +3,7 @@ import Vuex, { Store } from 'vuex';
 import Vue from 'vue';
 import axios from 'axios';
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   description: string;
@@ -11,12 +11,12 @@ interface Product {
   cost: number;
 }
 
-interface CartItem {
+export interface CartItem {
   product: Product;
   count: number;
 }
 
-interface StoreState {
+export interface StoreState {
   products: Product[];
   cart: CartItem[];
   loggedIn: boolean;
@@ -42,17 +42,26 @@ export default new Vuex.Store({
     products: (state) => {
       return state.products;
     },
+    cart: (state) => {
+      return state.cart;
+    },
+    loggedIn: (state) => {
+      return state.loggedIn;
+    },
+    error: (state) => {
+      return state.error;
+    },
   },
   mutations: {
     AddToCart(state: StoreState, newItem: Product) {
       const existingIndex = state.cart.findIndex((i) => i.product.id === newItem.id);
-      if (existingIndex) {
+      if (existingIndex !== -1) {
         const newCart = [...state.cart];
         const existingItem = newCart[existingIndex];
         newCart[existingIndex] = { ...existingItem, count: existingItem.count + 1 };
-        Vue.set(state, 'cart', newCart)
+        Vue.set(state, 'cart', newCart);
       } else {
-        Vue.set(state, 'cart', [...state.cart, { product: newItem, count: 0 }])
+        Vue.set(state, 'cart', [...state.cart, { product: newItem, count: 1 }]);
       }
     },
     SubtractFromCart(state: StoreState, item: CartItem) {
@@ -65,19 +74,19 @@ export default new Vuex.Store({
       } else {
         newCart[index] = newItem;
       }
-      Vue.set(state, 'cart', newCart)
+      Vue.set(state, 'cart', newCart);
     },
     RemoveFromCart(state: StoreState, item: CartItem) {
       const index = state.cart.findIndex((i) => i.product.id === item.product.id);
       const newCart = [...state.cart];
       newCart.splice(index, 1);
-      Vue.set(state, 'cart', newCart)
+      Vue.set(state, 'cart', newCart);
     },
     FetchProductListSuccess(state: StoreState, value: Product[]) {
       Vue.set(state, 'products', value);
     },
     FetchProductListFailure(state: StoreState, e: any) {
-      Vue.set(state, 'error', e)
+      Vue.set(state, 'error', e);
     },
     SetLoggedIn(state: StoreState, value: boolean) {
       Vue.set(state, 'loggedIn', value);

@@ -104,3 +104,23 @@ Once I got data into my app using VueX and Axios, I went about setting up my vie
 I started with the ProductList view first. Using https://vuejs.org/v2/guide/list.html to render the data
 
 I made use of bootstrap-vue's Card component and https://vuejs.org/v2/guide/syntax.html to create cards for each product on the list page.
+
+Next I went about creating the Product Details view, allowing users to see the details of a product and add the item to their cart if they are logged in.
+
+To do this I made use of these docs: https://vuejs.org/v2/guide/events.html and https://vuejs.org/v2/guide/conditional.html
+
+Used this when trying to load the details of the product in the details view https://012.vuejs.org/guide/best-practices.html#Data_Initialization
+and this https://router.vuejs.org/guide/advanced/data-fetching.html#fetching-after-navigation
+
+Used this when trying to manually navigate when the product details are requested for doesn't exist https://router.vuejs.org/guide/essentials/navigation.html
+
+Used this to create responsive images https://bootstrap-vue.js.org/docs/components/image/
+
+Used this for buttons https://bootstrap-vue.js.org/docs/components/button/#button-element-type
+
+Used this to help with using mapState + other properties in the computed component object
+https://stackoverflow.com/questions/47204038/vue-computed-syntax-error-with-mapstates
+
+Used this on cart page to make a table https://bootstrap-vue.js.org/docs/components/table/
+
+Used this to make a button group in a table cell https://bootstrap-vue.js.org/docs/components/button-group#sizing

@@ -15,8 +15,9 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/cart">Cart(0)</b-nav-item>
-          
+          <b-nav-item v-if="loggedIn" to="/cart">Cart({{cartItemCount}})</b-nav-item>
+          <b-nav-item v-if="loggedIn" v-on:click="logout">Logout</b-nav-item>
+          <b-nav-item v-else v-on:click="login">Login</b-nav-item>
         </b-navbar-nav>
 
       </b-collapse>
@@ -27,8 +28,31 @@
 <script lang="ts">
 
 import { Component, Vue } from 'vue-property-decorator';
+import { mapState } from 'vuex';
+import { CartItem } from '../store';
 
-@Component
+@Component({
+  computed: {
+    ...mapState([
+      'loggedIn',
+    ]),
+    cartItemCount() {
+      let count = 0;
+      this.$store.state.cart.forEach((item: CartItem) => {
+        count += item.count;
+      });
+      return count;
+    },
+  },
+  methods: {
+    login() {
+      this.$store.commit('SetLoggedIn', true);
+    },
+    logout() {
+      this.$store.commit('SetLoggedIn', false);
+    },
+  },
+})
 export default class NavBar extends Vue { }
 
 </script>
