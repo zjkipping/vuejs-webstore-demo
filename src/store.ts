@@ -82,6 +82,9 @@ export default new Vuex.Store({
       newCart.splice(index, 1);
       Vue.set(state, 'cart', newCart);
     },
+    ClearCart(state: StoreState) {
+      Vue.set(state, 'cart', []);
+    },
     FetchProductListSuccess(state: StoreState, value: Product[]) {
       Vue.set(state, 'products', value);
     },

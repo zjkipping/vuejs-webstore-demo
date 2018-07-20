@@ -124,3 +124,5 @@ https://stackoverflow.com/questions/47204038/vue-computed-syntax-error-with-maps
 Used this on cart page to make a table https://bootstrap-vue.js.org/docs/components/table/
 
 Used this to make a button group in a table cell https://bootstrap-vue.js.org/docs/components/button-group#sizing
+
+Used this as reference for making a form https://bootstrap-vue.js.org/docs/components/form/

@@ -12,7 +12,7 @@
           img-top
         >
           <p class="card-text">
-            {{ product.cost }}
+            ${{ product.cost }}
           </p>
           <b-button v-bind:to="'/details/' + product.id" variant="primary">Details</b-button>
         </b-card>
