@@ -126,3 +126,5 @@ Used this on cart page to make a table https://bootstrap-vue.js.org/docs/compone
 Used this to make a button group in a table cell https://bootstrap-vue.js.org/docs/components/button-group#sizing
 
 Used this as reference for making a form https://bootstrap-vue.js.org/docs/components/form/
+
+Used this since I forgot how to disable refresh on submit https://stackoverflow.com/questions/19454310/stop-form-refreshing-page-on-submit

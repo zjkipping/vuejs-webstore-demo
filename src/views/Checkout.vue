@@ -45,7 +45,7 @@ import { CartItem } from '../store';
     totalCost() {
       let total = 0;
       this.$store.state.cart.forEach((item: CartItem) => {
-        total += item.product.cost;
+        total += item.product.cost * item.count;
       });
       return total;
     },
