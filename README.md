@@ -68,6 +68,8 @@ I followed this blog, https://www.techiediaries.com/vue-bootstrap/, to accomplis
 
 I then just followed the docs here https://bootstrap-vue.js.org for any components/directives I needed.
 
+https://vuejs.org/v2/guide/components.html
+
 I then created a component for the navbar to stick above my router-view using the nav component from bootstrap-vue.
 
 I created some random data in a json file to use.
@@ -128,3 +130,5 @@ Used this to make a button group in a table cell https://bootstrap-vue.js.org/do
 Used this as reference for making a form https://bootstrap-vue.js.org/docs/components/form/
 
 Used this since I forgot how to disable refresh on submit https://stackoverflow.com/questions/19454310/stop-form-refreshing-page-on-submit
+
+https://vuejs.org/v2/guide/syntax.html
